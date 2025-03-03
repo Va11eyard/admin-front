@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react"
 
 interface Video {
@@ -10,10 +11,25 @@ interface VideoListProps {
   videos: Video[]
   onSelectVideo: (video: Video) => void
   onDeleteVideo: (videoId: number) => void
+=======
+import React from "react";
+
+interface Video {
+  id: number;
+  title: string;
+  file_path: string;
+}
+
+interface VideoListProps {
+  videos: Video[];
+  onSelectVideo: (video: Video) => void;
+  onDeleteVideo: (id: number) => void;
+>>>>>>> 74c1c3e (fixes)
 }
 
 const VideoList: React.FC<VideoListProps> = ({ videos, onSelectVideo, onDeleteVideo }) => {
   return (
+<<<<<<< HEAD
     <div className="bg-white shadow overflow-hidden sm:rounded-md">
       <ul className="divide-y divide-gray-200">
         {videos.map((video) => (
@@ -41,3 +57,27 @@ const VideoList: React.FC<VideoListProps> = ({ videos, onSelectVideo, onDeleteVi
 
 export default VideoList
 
+=======
+      <ul>
+        {videos.map((video) => (
+            <li key={video.id} className="flex items-center justify-between mb-2">
+              <button
+                  onClick={() => onSelectVideo(video)}
+                  className="text-blue-500 underline"
+              >
+                {video.title}
+              </button>
+              <button
+                  onClick={() => onDeleteVideo(video.id)}
+                  className="text-red-500 ml-4"
+              >
+                Delete
+              </button>
+            </li>
+        ))}
+      </ul>
+  );
+};
+
+export default VideoList;
+>>>>>>> 74c1c3e (fixes)
