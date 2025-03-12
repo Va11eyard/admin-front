@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react"
 
 import { useState, useEffect } from "react"
@@ -69,11 +70,18 @@ const VideosPage: React.FC = () => {
 export default VideosPage
 
 =======
+=======
+// /src/pages/VideosPage.tsx
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 import React, { useState, useEffect } from "react";
 import VideoList from "../components/Videos/VideoList";
 import VideoUpload from "../components/Videos/VideoUpload";
 import VideoPlayer from "../components/Videos/VideoPlayer";
 import { getVideos, uploadVideo, deleteVideo } from "../services/videos";
+<<<<<<< HEAD
+=======
+import Layout from "../components/Layout/Layout";
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 
 interface Video {
   id: number;
@@ -99,6 +107,13 @@ const VideosPage: React.FC = () => {
     }
   };
 
+<<<<<<< HEAD
+=======
+  const handleSelectVideo = (video: Video) => {
+    setSelectedVideo(video);
+  };
+
+>>>>>>> d386ccf (Нужен бэк для users and companies)
   const handleUploadVideo = async (file: File, title: string) => {
     try {
       await uploadVideo(file, title);
@@ -121,6 +136,7 @@ const VideosPage: React.FC = () => {
   };
 
   return (
+<<<<<<< HEAD
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-4">Videos</h1>
         {error && <p className="text-red-500">{error}</p>}
@@ -140,8 +156,24 @@ const VideosPage: React.FC = () => {
           </div>
         </div>
       </div>
+=======
+      <Layout>
+        <h1 className="text-2xl font-bold mb-4">Videos</h1>
+        {error && <p className="text-red-500">{error}</p>}
+        <VideoUpload onUpload={handleUploadVideo} />
+        <div className="flex flex-col md:flex-row mt-8 gap-4">
+          <div className="md:w-1/3">
+            <VideoList videos={videos} onSelectVideo={handleSelectVideo} onDeleteVideo={handleDeleteVideo} />
+          </div>
+          <div className="md:w-2/3">{selectedVideo && <VideoPlayer video={selectedVideo} />}</div>
+        </div>
+      </Layout>
+>>>>>>> d386ccf (Нужен бэк для users and companies)
   );
 };
 
 export default VideosPage;
+<<<<<<< HEAD
 >>>>>>> 74c1c3e (fixes)
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)

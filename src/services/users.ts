@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import api from "./api"
 
 export const getUsers = async () => {
@@ -22,6 +23,8 @@ export const deleteUser = async (userId: number) => {
 }
 
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 import api from "./api";
 
 interface User {
@@ -56,5 +59,9 @@ export const updateUser = async (userId: number, userData: any) => {
 export const deleteUser = async (userId: number) => {
   const response = await api.delete(`users/${userId}`); // Updated path
   return response.data;
+<<<<<<< HEAD
 };
 >>>>>>> 74c1c3e (fixes)
+=======
+};
+>>>>>>> d386ccf (Нужен бэк для users and companies)

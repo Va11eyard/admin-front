@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react"
 
 import { useState, useEffect } from "react"
@@ -67,11 +68,18 @@ const UsersPage: React.FC = () => {
     }
   }
 =======
+=======
+// /src/pages/UsersPage.tsx
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 import React, { useState, useEffect } from "react";
 import UserList from "../components/Users/UserList";
 import UserCard from "../components/Users/UserCard";
 import UserForm from "../components/Users/UserForm";
 import { getUsers, createUser, updateUser, deleteUser } from "../services/users";
+<<<<<<< HEAD
+=======
+import Layout from "../components/Layout/Layout";
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 
 interface User {
   id: number;
@@ -80,8 +88,11 @@ interface User {
   role: string;
 }
 
+<<<<<<< HEAD
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 const UsersPage: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
@@ -96,6 +107,7 @@ const UsersPage: React.FC = () => {
     try {
       const fetchedUsers = await getUsers();
       setUsers(fetchedUsers);
+<<<<<<< HEAD
     } catch (error: any) {
       console.error("Failed to fetch users:", error);
       setError(error.message);
@@ -103,13 +115,30 @@ const UsersPage: React.FC = () => {
   };
 
   const handleCreateUser = async (userData: Omit<User, "id">) => {
+=======
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
+  const handleSelectUser = (user: User) => {
+    setSelectedUser(user);
+  };
+
+  const handleCreateUser = async (userData: Omit<User, "id"> & { password?: string }) => {
+>>>>>>> d386ccf (Нужен бэк для users and companies)
     try {
       await createUser(userData);
       fetchUsers();
       setIsFormOpen(false);
+<<<<<<< HEAD
     } catch (error: any) {
       console.error("Failed to create user:", error);
       setError(error.message);
+=======
+    } catch (err: any) {
+      setError(err.message);
+>>>>>>> d386ccf (Нужен бэк для users and companies)
     }
   };
 
@@ -119,9 +148,14 @@ const UsersPage: React.FC = () => {
       fetchUsers();
       setIsFormOpen(false);
       setSelectedUser(null);
+<<<<<<< HEAD
     } catch (error: any) {
       console.error("Failed to update user:", error);
       setError(error.message);
+=======
+    } catch (err: any) {
+      setError(err.message);
+>>>>>>> d386ccf (Нужен бэк для users and companies)
     }
   };
 
@@ -130,6 +164,7 @@ const UsersPage: React.FC = () => {
       await deleteUser(userId);
       fetchUsers();
       setSelectedUser(null);
+<<<<<<< HEAD
     } catch (error: any) {
       console.error("Failed to delete user:", error);
       setError(error.message);
@@ -199,8 +234,58 @@ const UsersPage: React.FC = () => {
 export default UsersPage
 
 =======
+=======
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
+  return (
+      <Layout>
+        <h1 className="text-2xl font-bold mb-4">Users</h1>
+        {error && <p className="text-red-500">{error}</p>}
+        <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4"
+            onClick={() => {
+              setIsFormOpen(true);
+              setSelectedUser(null);
+            }}
+        >
+          Add New User
+        </button>
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="md:w-2/3">
+            <UserList users={users} onSelectUser={handleSelectUser} />
+          </div>
+          <div className="md:w-1/3">
+            {selectedUser && (
+                <UserCard user={selectedUser} onEdit={() => setIsFormOpen(true)} onDelete={() => handleDeleteUser(selectedUser.id)} />
+            )}
+          </div>
+        </div>
+        {isFormOpen && (
+            <UserForm
+                user={selectedUser || undefined}
+                onSubmit={(userData) => {
+                  if (selectedUser) {
+                    handleUpdateUser(selectedUser.id, userData);
+                  } else {
+                    handleCreateUser(userData as Omit<User, "id"> & { password?: string });
+                  }
+                }}
+                onCancel={() => {
+                  setIsFormOpen(false);
+                  setSelectedUser(null);
+                }}
+            />
+        )}
+      </Layout>
+>>>>>>> d386ccf (Нужен бэк для users and companies)
   );
 };
 
 export default UsersPage;
+<<<<<<< HEAD
 >>>>>>> 74c1c3e (fixes)
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)

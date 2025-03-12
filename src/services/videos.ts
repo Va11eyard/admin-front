@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import api from "./api"
 
 export const getVideos = async () => {
@@ -24,6 +25,8 @@ export const deleteVideo = async (videoId: number) => {
 }
 
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 // videos.ts
 import api from "./api";
 
@@ -60,5 +63,9 @@ export const uploadVideo = async (file: File, title: string) => {
 export const deleteVideo = async (videoId: number) => {
   const response = await api.delete(`/videos/${videoId}`); // Use "/videos", not "/api/videos"
   return response.data;
+<<<<<<< HEAD
 };
 >>>>>>> 74c1c3e (fixes)
+=======
+};
+>>>>>>> d386ccf (Нужен бэк для users and companies)

@@ -1,19 +1,26 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import axios from "axios"
 
 const api = axios.create({
   baseURL: "http://localhost:8080/api",
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 // api.ts
 import axios from "axios";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL || "http://localhost:8080/api", // Correct base URL
+<<<<<<< HEAD
 >>>>>>> 74c1c3e (fixes)
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
   headers: {
     "Content-Type": "application/json",
   },
   withCredentials: true,
+<<<<<<< HEAD
 <<<<<<< HEAD
   timeout: 10000, // 10 second timeout
 })
@@ -71,6 +78,8 @@ api.interceptors.response.use(
 export default api
 
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
   timeout: 10000,
 });
 
@@ -120,5 +129,9 @@ api.interceptors.response.use(
   },
 );
 
+<<<<<<< HEAD
 export default api;
 >>>>>>> 74c1c3e (fixes)
+=======
+export default api;
+>>>>>>> d386ccf (Нужен бэк для users and companies)

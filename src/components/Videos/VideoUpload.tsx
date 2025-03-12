@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react"
 
 import { useState } from "react"
@@ -61,6 +62,8 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUpload }) => {
 export default VideoUpload
 
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 import React, { useState } from "react";
 
 interface VideoUploadProps {
@@ -81,6 +84,7 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUpload }) => {
     };
 
     return (
+<<<<<<< HEAD
         <form onSubmit={handleSubmit} className="space-y-4">
             <div>
                 <label htmlFor="title" className="block text-sm font-medium text-gray-700">
@@ -103,17 +107,38 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUpload }) => {
                 <input
                     type="file"
                     id="video"
+=======
+        <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded shadow max-w-md mx-auto">
+            <div>
+                <label className="block text-sm font-medium">Video Title</label>
+                <input
+                    type="text"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    required
+                    className="mt-1 block w-full border rounded p-2"
+                />
+            </div>
+            <div>
+                <label className="block text-sm font-medium">Choose Video File</label>
+                <input
+                    type="file"
+>>>>>>> d386ccf (Нужен бэк для users and companies)
                     accept="video/*"
                     onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
                     required
                     className="mt-1 block w-full"
                 />
             </div>
+<<<<<<< HEAD
 
             <button
                 type="submit"
                 className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-indigo-600 text-white"
             >
+=======
+            <button type="submit" className="w-full bg-blue-800 text-white py-2 rounded hover:bg-primary-hover transition">
+>>>>>>> d386ccf (Нужен бэк для users and companies)
                 Upload Video
             </button>
         </form>
@@ -121,4 +146,7 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUpload }) => {
 };
 
 export default VideoUpload;
+<<<<<<< HEAD
 >>>>>>> 74c1c3e (fixes)
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)

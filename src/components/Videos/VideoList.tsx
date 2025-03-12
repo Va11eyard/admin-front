@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react"
 
 interface Video {
@@ -12,6 +13,8 @@ interface VideoListProps {
   onSelectVideo: (video: Video) => void
   onDeleteVideo: (videoId: number) => void
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 import React from "react";
 
 interface Video {
@@ -24,6 +27,7 @@ interface VideoListProps {
   videos: Video[];
   onSelectVideo: (video: Video) => void;
   onDeleteVideo: (id: number) => void;
+<<<<<<< HEAD
 >>>>>>> 74c1c3e (fixes)
 }
 
@@ -71,6 +75,19 @@ export default VideoList
                   onClick={() => onDeleteVideo(video.id)}
                   className="text-red-500 ml-4"
               >
+=======
+}
+
+const VideoList: React.FC<VideoListProps> = ({videos, onSelectVideo, onDeleteVideo}) => {
+  return (
+      <ul className=" bg-white rounded shadow max-w-md p-4 ">
+        {videos.map((video) => (
+            <li key={video.id} className="flex w-full items-center justify-between mb-2">
+              <button onClick={() => onSelectVideo(video)} className="text-blue-500 underline">
+                {video.title}
+              </button>
+              <button onClick={() => onDeleteVideo(video.id)} className="text-red-500 ml-4">
+>>>>>>> d386ccf (Нужен бэк для users and companies)
                 Delete
               </button>
             </li>
@@ -80,4 +97,7 @@ export default VideoList
 };
 
 export default VideoList;
+<<<<<<< HEAD
 >>>>>>> 74c1c3e (fixes)
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)

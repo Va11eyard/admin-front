@@ -1,21 +1,28 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import api from "./api"
 
 interface LoginResponse {
   access_token: string
   token_type: string
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 // auth.ts
 import api from "./api";
 
 // Match backend JwtResponse
 interface LoginResponse {
   token: string; // Changed from access_token to token
+<<<<<<< HEAD
 >>>>>>> 74c1c3e (fixes)
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
 }
 
 export const login = async (email: string, password: string) => {
   try {
+<<<<<<< HEAD
 <<<<<<< HEAD
     const response = await api.post<LoginResponse>(
       "/login",
@@ -70,6 +77,8 @@ export const logout = () => {
 }
 
 =======
+=======
+>>>>>>> d386ccf (Нужен бэк для users and companies)
     const response = await api.post<LoginResponse>("/login", { email, password });
     localStorage.setItem("token", response.data.token); // Store token
     console.log("Login successful, token stored:", response.data.token); // Debug
@@ -113,5 +122,9 @@ export const resetPassword = async (token: string, newPassword: string) => {
 
 export const logout = () => {
   localStorage.removeItem("token");
+<<<<<<< HEAD
 };
 >>>>>>> 74c1c3e (fixes)
+=======
+};
+>>>>>>> d386ccf (Нужен бэк для users and companies)
